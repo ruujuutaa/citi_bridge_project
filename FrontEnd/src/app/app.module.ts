@@ -13,11 +13,20 @@ import { MatCardModule } from '@angular/material/card';
 import {MatToolbarModule} from '@angular/material/toolbar';
 import { HttpClientModule } from '@angular/common/http';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
+import { HomeComponent } from './home/home.component';
+
+import {MatExpansionModule} from '@angular/material/expansion';
+import { NavbarComponent } from './navbar/navbar.component';
+
+
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    LoginComponent
+    LoginComponent,
+    HomeComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
@@ -31,7 +40,9 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     HttpClientModule,
     FormsModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
+    MatExpansionModule,
+    
   ],
   providers: [],
   bootstrap: [AppComponent]
