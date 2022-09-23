@@ -22,7 +22,7 @@ import yahoofinance.Stock;
 public class StockWrapper {
 	private String name;
 	private BigDecimal price;
-	private BigDecimal change;
+	private BigDecimal gain;
 	private String Sector;
 	private BigDecimal pe;
 

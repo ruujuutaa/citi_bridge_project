@@ -13,14 +13,14 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 
-import com.citibridge.service.StockService;
+import com.citibridge.service.StockServiceImpl;
 import com.citibridge.entities.StockWrapper;
 @RestController
 @CrossOrigin("*")
 @RequestMapping("/")
 public class StockController {
 	@Autowired
-	private StockService stockService;
+	private StockServiceImpl stockService;
 	
 	@GetMapping("/{sectorname}")
 	public List<StockWrapper> getStocks(@PathVariable("sectorname") String sectorname) throws IOException {
