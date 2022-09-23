@@ -16,16 +16,21 @@ li, a, button {
 }
 
 header {
+
     display: flex;
-    justify-content: flex-end;
+    /*justify-content: flex-end;*/
     align-items: center;
-    padding: 30px 10%;
+    padding: 30px 5%;
     /* padding-bottom: 10px; */
     background-color: #24252A;
 }
+.navbar{
+    float: right;
 
+}
 .logo {
     cursor: pointer;
+    margin-left: 0;
     margin-right: auto;
     width : 60px;
     height : 60px;
