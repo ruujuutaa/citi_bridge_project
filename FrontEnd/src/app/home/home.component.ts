@@ -9,22 +9,23 @@ import { StockServiceService } from '../stock-service.service';
 })
 export class HomeComponent implements OnInit {
   //stocks : Stock[]=[];
-  stocks : Stock[][] =[[]];
+  stocks : Stock[]=[];
+  sectorSelected : string;
   sectors : string[] =["Financial Services","Construction Materials","Automobile and Auto Components","Fast Moving Consumer Goods","Healthcare","Information Technology","Metals & Mining"];
   constructor(private stockService : StockServiceService) { }
 
   ngOnInit(): void {
-    var i =0 ;
-    this.sectors.forEach((sector) =>{
-      this.stockService.getStocks(sector).subscribe((res)=>{
-        this.stocks[i] = res;
-        console.log(JSON.stringify(this.stocks[i]));
-        console.log("hi")
-        
-    })
-   
-    i++;
     
+    this.sectorSelected=this.sectors[0];
+    this.onSectorSelected(this.sectorSelected);
+  }
+  
+  onSectorSelected(val : any){
+    this.stockService.getStocks(val).subscribe((res)=>{
+      this.stocks = res;
+      console.log(JSON.stringify(this.stocks));
+      console.log("hi")
+      
   })
   }
 
