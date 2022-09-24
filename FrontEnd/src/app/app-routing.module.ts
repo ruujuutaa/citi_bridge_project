@@ -3,6 +3,7 @@ import { RouterModule, Routes } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { LoginComponent } from './login/login.component'
 import { NavbarComponent } from './navbar/navbar.component';
+import { WatchlistComponent } from './watchlist/watchlist.component';
 const routes: Routes = [
   {
     path:'', 
@@ -16,6 +17,11 @@ const routes: Routes = [
   {
     path:'login', 
     component: LoginComponent
+
+  },
+  {
+    path:'watchlist', 
+    component: WatchlistComponent
 
   }
 ];

@@ -1,19 +1,24 @@
 
 <app-navbar></app-navbar>
+<br>
+<br>
+<h1 class="Name"> Hello <span style='color:#004685'>{{username}}</span> !</h1>
 <div class = "drop-down">
-    <label for="cars">Choose a sector: </label>
+    <label >Choose a sector: </label>
     <select class="drop-down-content" name="sectors" [(ngModel)] = "sectorSelected" (ngModelChange)="onSectorSelected($event)" >
     <option *ngFor="let sector of sectors" [value]="sector">{{sector}}</option>
     </select>
 </div>
+
+
 <div class="content-table" *ngIf="sectorSelected">
     <table width="100%" >
         <thead>
             <tr>
                 <th>Name</th>
                 <th>Price</th>
-                <th>Gain</th>
-                <th>Sector</th>
+                <th>Gain (%)</th>
+                <!-- <th>Sector</th> -->
                 <th>PE Ratio</th>
                 <th>Action</th>
             </tr>
@@ -23,9 +28,10 @@
                 <td>{{s.name}}</td>
                 <td>{{s.price}}</td>
                 <td>{{s.gain*100}}</td>
-                <td>{{s.sector}}</td>
+                <!-- <td>{{s.sector}}</td> -->
                 <td>{{s.pe}}</td>
-                <td><button>ADD</button></td>
+                <td><button (click)=addStock(s.name,username)>ADD</button></td>
+                
             </tr>
         </tbody>
 

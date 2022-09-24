@@ -32,7 +32,7 @@ header {
     cursor: pointer;
     margin-left: 0;
     margin-right: auto;
-    width : 60px;
+    width : 65px;
     height : 60px;
 }
 
@@ -57,7 +57,7 @@ header {
 button {
     margin-left: 20px;
     padding: 9px 25px;
-    background-color: rgba(0, 152, 121, 1);
+    background-color: #004685;
     border: none;
     border-radius: 50px;
     cursor: pointer;
@@ -65,5 +65,5 @@ button {
 }
 
 button:hover {
-    background-color: rgba(0, 152, 121, 0.8);
+    background-color:#004685;
 }

@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
+import { AuthServiceService } from '../auth-service.service';
 import { Stock } from '../stock';
 import { StockServiceService } from '../stock-service.service';
+import UpdateService from '../update.service';
+import { User } from '../user';
 
 @Component({
   selector: 'app-home',
@@ -9,13 +12,15 @@ import { StockServiceService } from '../stock-service.service';
 })
 export class HomeComponent implements OnInit {
   //stocks : Stock[]=[];
+  //user : User;
+  username : string;
   stocks : Stock[]=[];
   sectorSelected : string;
   sectors : string[] =["Financial Services","Construction Materials","Automobile and Auto Components","Fast Moving Consumer Goods","Healthcare","Information Technology","Metals & Mining"];
-  constructor(private stockService : StockServiceService) { }
+  constructor(private stockService : StockServiceService, private updateService : UpdateService) { }
 
   ngOnInit(): void {
-    
+    this.username=history.state.data.userName;
     this.sectorSelected=this.sectors[0];
     this.onSectorSelected(this.sectorSelected);
   }
@@ -28,6 +33,14 @@ export class HomeComponent implements OnInit {
       
   })
   }
+
+  addStock(stock : string, username: string){
+    //this.user.stocks=[...this.user.stocks,stock];
+    this.updateService.updateStocks(stock, username);
+
+  }
+
+  
 
 // ngOnInit(): void {
 //   this.stockService.getStocks("Financial Services").subscribe((res)=>{
