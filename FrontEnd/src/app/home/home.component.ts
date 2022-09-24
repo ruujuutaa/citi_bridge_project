@@ -17,10 +17,10 @@ export class HomeComponent implements OnInit {
   stocks : Stock[]=[];
   sectorSelected : string;
   sectors : string[] =["Financial Services","Construction Materials","Automobile and Auto Components","Fast Moving Consumer Goods","Healthcare","Information Technology","Metals & Mining"];
-  constructor(private stockService : StockServiceService, private updateService : UpdateService) { }
+  constructor(private stockService : StockServiceService, private updateService : UpdateService,public authService : AuthServiceService) { }
 
   ngOnInit(): void {
-    this.username=history.state.data.userName;
+    this.username=this.authService.username;
     this.sectorSelected=this.sectors[0];
     this.onSectorSelected(this.sectorSelected);
   }

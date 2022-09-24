@@ -41,6 +41,7 @@ export class LoginComponent implements OnInit {
           if(res) {
             console.log(res);
             //alert("login successful");
+            this.authService.setUsername(this.user.userName);
             this.router.navigate(['/home'],{state:{data:this.user}});
           }
           else {
