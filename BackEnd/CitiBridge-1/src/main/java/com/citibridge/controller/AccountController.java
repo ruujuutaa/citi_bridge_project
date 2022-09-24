@@ -1,5 +1,8 @@
 package com.citibridge.controller;
 
+import java.io.IOException;
+import java.util.List;
+
 import org.springframework.beans.factory.annotation.Autowired;
 
 //import javax.servlet.http.HttpSession;
@@ -19,6 +22,7 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.citibridge.entities.Account;
+import com.citibridge.entities.StockWrapper;
 //import com.citibridge.entities.Account;
 import com.citibridge.service.AccountService;
 
@@ -56,6 +60,12 @@ public class AccountController {
 		return accountService.removeStock(stock,username);
 	}
 	
+	@GetMapping("/saved/{username}")
+	public List<StockWrapper> getSavedStocks(@PathVariable("username") String username) throws IOException {
+			return accountService.getSavedStocks(username);
+			
+		
+	}
 	
 }
 
