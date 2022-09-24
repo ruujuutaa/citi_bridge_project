@@ -17,6 +17,7 @@ import { HomeComponent } from './home/home.component';
 
 import {MatExpansionModule} from '@angular/material/expansion';
 import { NavbarComponent } from './navbar/navbar.component';
+import { WatchlistComponent } from './watchlist/watchlist.component';
 
 
 
@@ -26,7 +27,8 @@ import { NavbarComponent } from './navbar/navbar.component';
     AppComponent,
     LoginComponent,
     HomeComponent,
-    NavbarComponent
+    NavbarComponent,
+    WatchlistComponent
   ],
   imports: [
     BrowserModule,
