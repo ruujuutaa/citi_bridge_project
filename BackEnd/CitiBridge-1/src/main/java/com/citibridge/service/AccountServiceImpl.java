@@ -14,5 +14,15 @@ public class AccountServiceImpl implements AccountService {
 		// TODO Auto-generated method stub
 		return accountDAO.login(username, password);
 	}
+	@Override
+	public int addStocks(String stock, String username) {
+		// TODO Auto-generated method stub
+		return accountDAO.addStocks(stock,username);
+	}
+	@Override
+	public int removeStock(String stock, String username) {
+		// TODO Auto-generated method stub
+		return accountDAO.removeStock(stock,username);
+	}
 
 }
