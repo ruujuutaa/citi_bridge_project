@@ -11,6 +11,7 @@ import lombok.NoArgsConstructor;
 public class Account {
 	private String userName;
 	private String password;
+	private String[] stocks;
 	public String getPassword() {
 		// TODO Auto-generated method stub
 		return this.password;
